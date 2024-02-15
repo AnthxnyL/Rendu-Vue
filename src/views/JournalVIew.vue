@@ -38,14 +38,24 @@ export default {
 
 <style>
 
+
+
 .journal-container{
-    margin-top: 20px;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap : 20px;
+  margin-top: 24px;
+  padding: 0 24px 0 24px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap : 20px;
+}
+
+.journal-container  h1{
+  color : white;
+  font-size: 2rem;
+  font-weight: 500;
 }
 
 </style>

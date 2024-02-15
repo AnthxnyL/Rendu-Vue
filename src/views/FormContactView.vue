@@ -14,7 +14,6 @@ export default {
 <template>
 
 <div class="formContact-container">
-        <h1>Ajoute ton contatc</h1>
         <FormContact/>
     </div>
 
@@ -28,6 +27,7 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap : 20px;
 }
 </style>

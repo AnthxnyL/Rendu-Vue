@@ -26,11 +26,11 @@ export default {
 <template>
 
 <div class="journal-card">
-    <h3>{{ journalContact.nom }}</h3>
-    <h3>{{ journalContact.numero }}</h3>
-    <p>{{ journalContact.date }}</p>
     <button @click="call(journalContact.nom)">
-        <img src="../assets/phone-call-svgrepo-com.svg" alt="phone">
+        <h3 class="name">{{ journalContact.nom }}</h3>
+        <h3>{{ journalContact.numero }}</h3>
+        <p>{{ journalContact.date }}</p>
+       
     </button>
 </div>
 
@@ -40,14 +40,7 @@ export default {
 
 .journal-card{
     width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap : 20px;
-    padding: 10px;
-    background-color: #26302c;
-    border-radius: 10px;
+   
 }
 
 .journal-card h3{
@@ -59,16 +52,24 @@ export default {
 }
 
 .journal-card button{
-    background-color: #18db8d;
-    border: none;
-    border-radius: 10px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap : 20px;
+    padding: 10px;
+    border : none;
+    background-color: transparent;
+    border-bottom : 0.2px solid grey;
+    cursor: pointer;
+}
+
+button .name {
+    font-size: 18px;
+    color : #0A84FF;
 }
 
 
-.journal-card button img{
-    width: 30px;
-    height: 30px;
-}
 
 
 
