@@ -13,9 +13,9 @@ export default {
 
 <template>
 
-<div class="formContact-container">
-        <FormContact/>
-    </div>
+  <div class="formContact-container">
+    <FormContact/>
+  </div>
 
 </template>
 

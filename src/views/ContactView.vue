@@ -37,13 +37,12 @@ export default {
       <div class="contact-header">
         <h1>Mes contacts</h1>
         <div class="add-contact">
-            <RouterLink to="/FormContact" class="add-button">+</RouterLink>
+          <RouterLink to="/FormContact" class="add-button">+</RouterLink>
         </div>     
       </div>
 
       <div class="list-contact" v-for="contact in contacts">
-          <ContactCard :contact="contact"/>
-          
+        <ContactCard :contact="contact"/>
       </div>
     </div>
     

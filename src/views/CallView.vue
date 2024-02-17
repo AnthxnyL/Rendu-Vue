@@ -1,21 +1,22 @@
 <script>
+
+import { useJournalListStore } from '../stores/journalList';
 import { RouterLink } from 'vue-router'
 
 
 export default {
     name: 'CallView',
     setup(){
-        
+        const journalListStore = useJournalListStore()
+        return {
+            journalListStore
+        }
     },
-    props : [
-     
-    ],
     components: {
         
     },
-    computed: {
-    },
     data(){
+
     },
     methods : {
     }
@@ -27,8 +28,8 @@ export default {
 
     <div class="call-container">
         <div class="time-name">
-            <span>00:00</span>
-            <h2>Appel en cours ...</h2>
+            <span> 00:00</span>
+            <h2>{{ this.journalListStore.inCall[0].nom }}</h2>
 
         </div>
 

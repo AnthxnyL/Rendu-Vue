@@ -9,9 +9,14 @@ export const useJournalListStore = defineStore('journalList', {
               date : "2021-05-12"
             },
             {
-              nom : "Doe",
+              nom : "Ronaldo",
               date : "2021-05-12"
             },
+        ],
+        inCall :[
+            {
+              nom : "",
+            }
         ],
     }),
     actions: {
@@ -21,6 +26,17 @@ export const useJournalListStore = defineStore('journalList', {
                 date: `${new Date().getDate()}/${new Date().getMonth()}/${new Date().getUTCFullYear()} à ${new Date().getHours()} : ${new Date().getMinutes()}`,
             };
             this.journals.push(newContactJournal);
+
+            const newInCall = {
+                nom: contactNom,
+            };
+
+            if (this.inCall.length === 0) {
+                this.inCall.push(newInCall);
+            } else {
+                this.inCall = [];
+                this.inCall.push(newInCall);
+            }
         }
     },
 });
