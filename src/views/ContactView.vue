@@ -26,6 +26,9 @@ export default {
     }
   },
     methods : {
+      deleteContact(contact){
+        this.contactListStore.deleteContact(contact)
+      }
     }
 }
 

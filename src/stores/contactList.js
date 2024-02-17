@@ -29,7 +29,10 @@ export const useContactListStore = defineStore('contactList', {
          },
         call(nameOrNumber){
           this.contacts.call(nameOrNumber)
-        }    
+        },
+        deleteContact(contact){
+          this.contacts.splice(this.contacts.indexOf(contact), 1)
+        },
     },
 });
                

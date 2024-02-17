@@ -1,14 +1,17 @@
 <script>
 
 import { useJournalListStore } from '@/stores/journalList';
+import { useContactListStore } from '@/stores/contactList';
 import { RouterLink } from 'vue-router';
 
     export default {
         name : 'ContactCard',
         setup(){
-            const journalListStore = useJournalListStore()
+            const journalListStore = useJournalListStore(),
+            contactListStore = useContactListStore()
             return {
-                journalListStore
+                journalListStore,
+                contactListStore
             }
         },
         props : [
@@ -17,8 +20,11 @@ import { RouterLink } from 'vue-router';
          methods: {
             call(nom){
                 this.journalListStore.call(nom)
+            },
+            deleteContact(contact){
+                this.contactListStore.deleteContact(contact)
             }
-        }
+         },
     }
 
 </script>
@@ -27,14 +33,32 @@ import { RouterLink } from 'vue-router';
     <div class="contact-card">
         <h2>{{ contact.nom }} </h2>
         <p>{{ contact.numero }} </p>
-        <RouterLink @click="call(contact.nom)" to="/call">
-            <img src="../assets/phone.svg" alt="phone">
-        </RouterLink>
+        <div class="buttons-contact">
+            <button class="delete-contact" @click="deleteContact(contact)">
+                +
+            </button>
+            <RouterLink @click="call(contact.nom)" to="/call">
+                <img src="../assets/phone.svg" alt="phone">
+            </RouterLink>
+        </div>
     </div>
 </template>
 
 <style>
 
+.contact-card .buttons-contact {
+    display: flex;
+    align-items: center;
+    gap : 24px;
+}
+
+.delete-contact {
+    color : rgb(154, 0, 0);
+    font-size: 42px;
+    rotate: 45deg;
+    cursor: pointer;
+
+}
 .contact-card {
     width : 100%;
     padding: 12px;
